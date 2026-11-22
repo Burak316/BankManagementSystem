@@ -4,20 +4,19 @@
     {
         static void Main(string[] args)
         {
-            // BankAccount account1 = new BankAccount(); ------> error beacuse of abstract
-            BankAccount account2 = new SavingAccount(2, "Ali");
-            BankAccount account3 = new CheckingAccount(3,"Mehmet");
-
-            // account1.AccountNumber = 1; ------> error beacuse of abstract
-            account2.AccountNumber = 2;
-            account3.AccountNumber = 3;
-
+            List<BankAccount> accounts = new List<BankAccount>();
+            accounts.Add(new SavingAccount(1, "Ali",1000));
+            accounts.Add(new CheckingAccount(2, "Furkan",2000));
+            accounts.Add(new SavingAccount(3, "Mehmet",3000));
+            
+            foreach(BankAccount i in accounts)
+            {
+                Console.WriteLine($"{i.AccountNumber} {i.OwnerName} {i.Balance} {i.CalculateInterest()}");
+            }
 
            
-            account2.Deposit(100);
-            account2.Withdraw(50);
-            Console.WriteLine(account2.Balance);
-            Console.WriteLine(account2.CalculateInterest());
+            
+           
 
 
 

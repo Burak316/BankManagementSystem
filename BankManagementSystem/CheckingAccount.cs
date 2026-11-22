@@ -10,7 +10,7 @@ namespace BankManagementSystem
         {
             return Balance * 0.02;
         }
-        public CheckingAccount(int accountNumber, string ownerName):base(accountNumber,ownerName)
+        public CheckingAccount(int accountNumber, string ownerName,double deposit):base(accountNumber,ownerName,deposit)
         {
             
         }
